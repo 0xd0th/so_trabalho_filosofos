@@ -1,8 +1,15 @@
 
 from filosofo import Filosofo
+from scheduler import Scheduler
+
+NUM_FILOSOFOS = 5
 
 if __name__ == "__main__":
-    
-    filosofos: list = [ Filosofo(id) for id in range(5) ] 
 
-    
+    scheduler = Scheduler(NUM_FILOSOFOS)
+
+    filosofos = [Filosofo(i, scheduler) for i in range(NUM_FILOSOFOS)]
+
+    for f in filosofos:
+        f.start()
+
