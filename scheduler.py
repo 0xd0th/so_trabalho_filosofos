@@ -1,3 +1,4 @@
+
 import threading
 import heapq
 
@@ -33,6 +34,7 @@ class Scheduler:
 
                 if f == filosofo and self.pode_comer(filosofo.id):
                     heapq.heappop(self.heap)
+                    print(f"Filósofo {filosofo.id}: pegou os garfos")
                     self.pegar_garfos(filosofo.id)
                     return
 
